@@ -1,6 +1,9 @@
 package pages;
 
 
+import java.io.IOException;
+
+import core.Driver;
 import maps.AcoesMap;
 
 public class AcoesPages {
@@ -26,7 +29,9 @@ public class AcoesPages {
 
 	}
 
-	public String getValorAcao() {
+	public String getValorAcao() throws IOException {
+		Driver.printScreen("Valor acao");
 		return acoesMap.spanValor.getText();
+		
 	}
 }
