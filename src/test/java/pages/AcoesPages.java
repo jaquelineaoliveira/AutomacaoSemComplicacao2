@@ -1,25 +1,32 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import core.Driver;
+import maps.AcoesMap;
 
 public class AcoesPages {
-	
-	public void preenchePesquisa(CharSequence...valores) {
+	private AcoesMap acoesMap = new AcoesMap();
+
+/*	public void preenchePesquisa2(CharSequence... valores) {
 		String inpPesquisa = "input[title='Pesquisar']";
-		WebElement pesquisar; 
-		
-		pesquisar = Driver.driver.findElement(By.cssSelector(inpPesquisa)); 
-		pesquisar.sendKeys(valores);
-		
-	}
-	
-	public String getValorAcao() {
-		String spanValor = "span[jsname ='vWLAgc']";
-		String valoracao = Driver.driver.findElement(By.cssSelector(spanValor)).getText();
-		return valoracao; 
+		WebElement pesquisar;
+
+		pesquisar = Driver.driver.findElement(By.cssSelector(inpPesquisa));
+		pesquisar.sendKeys(valores);	
+
 	}
 
+	public String getValorAcao2() {
+		String spanValor = "span[jsname ='vWLAgc']";
+		String valoracao = Driver.driver.findElement(By.cssSelector(spanValor)).getText();
+		return valoracao;
+	}*/ 
+
+	public void preenchePesquisa(CharSequence... valores) {
+		acoesMap.inpPesquisa.sendKeys(valores);
+
+	}
+
+	public String getValorAcao() {
+		return acoesMap.spanValor.getText();
+	}
 }
